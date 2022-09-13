@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth';
+import {setDoc, doc, serverTimestamp} from 'firebase/firestore';
+import {db} from  '../firebase.config';
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg';
 import visibilityIcon from '../assets/svg/visibilityIcon.svg';
 
@@ -27,6 +30,28 @@ function SignUp() {
     }))
   }
 
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const auth = getAuth();
+      const userCredentials = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredentials.user
+
+      updateProfile(auth.currentUser, {displayName: name})
+
+      const formDataCopy = {...formData}
+      delete formDataCopy.password 
+      formDataCopy.timeStamp = serverTimestamp();
+
+      await setDoc(doc(db, 'users', user.uid), formDataCopy);
+
+      navigate('/')
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
   return (
     <>
       <div className="header">
@@ -36,7 +61,7 @@ function SignUp() {
           </p>
         </header>
 
-        <form>
+        <form onSubmit={onSubmit}>
           <input type="text" className="nameInput" placeholder='Name' id='name' value={name} onChange={onChange} />
           <input type="email" className="emailInput" placeholder='Email' id='email' value={email} onChange={onChange} />
 
