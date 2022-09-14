@@ -9,6 +9,7 @@ import Offers from "../src/pages/Offers";
 import SignUp from "../src/pages/SignUp";
 import SignIn from "../src/pages/SignIn";
 import Profile from "../src/pages/Profile";
+import Category from "../src/pages/Category";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Explore />} />
           <Route path="/offers" element={<Offers />} />
+          <Route path="/category/:categoryName" element={<Category />} />
           <Route path="/profile" element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />
           </Route>
