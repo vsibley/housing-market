@@ -6,12 +6,12 @@ import {
     uploadBytesResumable,
     getDownloadURL,
 } from 'firebase/storage'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { v4 as uuidv4 } from 'uuid'
 import Spinner from '../components/Spinner'
-
 function CreateListing() {
     const [geolocationEnabled, setGeolocationEnabled] = useState(true)
     const [loading, setLoading] = useState(false)
@@ -99,17 +99,13 @@ function CreateListing() {
             geolocation.lng = longitude
             location = address
         }
-
         // Store image in firebase
         const storeImage = async (image) => {
             return new Promise((resolve, reject) => {
                 const storage = getStorage()
                 const fileName = `${auth.currentUser.uid}-${image.name}-${uuidv4()}`
-
                 const storageRef = ref(storage, 'images/' + fileName)
-
                 const uploadTask = uploadBytesResumable(storageRef, image)
-
                 uploadTask.on(
                     'state_changed',
                     (snapshot) => {
@@ -129,6 +125,7 @@ function CreateListing() {
                         reject(error)
                     },
                     () => {
+                       
                         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                             resolve(downloadURL)
                         })
@@ -136,7 +133,6 @@ function CreateListing() {
                 )
             })
         }
-
         const imgUrls = await Promise.all(
             [...images].map((image) => storeImage(image))
         ).catch(() => {
@@ -144,12 +140,25 @@ function CreateListing() {
             toast.error('Images not uploaded')
             return
         })
-        
-        setLoading(false)
-        console.log(imgUrls)
-    }
 
-    
+        
+        const formDataCopy = {
+            ...formData,
+            imgUrls,
+            geolocation,
+            timestamp: serverTimestamp(),
+        }
+
+        delete formDataCopy.images
+        delete formDataCopy.address
+        location && (formDataCopy.location = location)
+        !formDataCopy.offer && delete formDataCopy.discountedPrice
+
+        const docRef = await addDoc(collection(db, 'listings'), formDataCopy)
+        setLoading(false)
+        toast.success('Listing saved')
+        navigate(`/category/${formDataCopy.type}/${docRef.id}`)
+    }
 
     const onMutate = (e) => {
         let boolean = null
