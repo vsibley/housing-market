@@ -54,7 +54,7 @@ function Category() {
 
 
   return (
-    <div className='category'>Category
+    <div className='category'>
       <header>
         <p className='pageHeader'>
           {params.categoryName === 'rent' ? 'Places for Rent' : 'Places for Sale'}

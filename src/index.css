@@ -12,8 +12,6 @@ body {
   background-color: #f2f4f8;
   margin: 0;
   box-sizing: border-box;
-  padding-left: .75rem;
-  padding-right: .75rem;
 }
 
 a {
@@ -820,4 +818,11 @@ button {
   margin-left: 1rem;
   font-size: 0.8rem;
   opacity: 0.75;
+}
+
+.sliderImg {
+  width: 100vw;  
+  height: 50vh;
+  object-fit: cover;
+  
 }
