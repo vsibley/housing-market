@@ -82,7 +82,7 @@ function Profile() {
         (listing) => listing.id !== listingId
       )
       setListings(updatedListings)
-      toast.success('Listing has been succesfully deleted')
+      toast.success('Listing has')
     }
   }
 
@@ -102,7 +102,7 @@ function Profile() {
 }
 
   const onEdit = (listingId) => navigate(`/edit-listing/${listingId}`)
-
+ 
 
 return <div>
   <header className="profileHeader">

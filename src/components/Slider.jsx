@@ -32,7 +32,7 @@ function Slider() {
           id: doc.id,
           data: doc.data(),
         })
-      })
+      })           
 
       setListings(listings)
       setLoading(false)
