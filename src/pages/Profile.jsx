@@ -82,7 +82,7 @@ function Profile() {
         (listing) => listing.id !== listingId
       )
       setListings(updatedListings)
-      toast.success('Listing has')
+      toast.success('Listing has been deleted')
     }
   }
 
