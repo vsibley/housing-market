@@ -193,7 +193,7 @@ function CreateListing() {
         return <Spinner />
     }
     return (
-        <div className='profile'>
+        <div className='max-w-[1240px] mx-auto'>
             <header>
                 <p className='pageHeader'>Create a Listing</p>
             </header>

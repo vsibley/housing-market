@@ -47,9 +47,9 @@ function SignIn() {
 
   return (
     <>
-      <div className="header">
+      <div className="header px-3 md:px-0 max-w-[1240px] mx-auto pt-[4rem] md:pt-[15rem] min-h-screen">
         <header>
-          <p className="pageHeader">
+          <p className="pageHeader pb-5">
             Welcome Back!
           </p>
         </header>
@@ -62,17 +62,19 @@ function SignIn() {
 
             <img src={visibilityIcon} alt="show password" className="showPassword" onClick={() => setShowPassword((prevState) => !prevState )}/>
           </div>
-          <Link to='/forgot-password' className='forgotPasswordLink'>Forgot Password</Link>
-          <div className="signInBar">
-            <p className="signInText">
+          <div className='flex justify-between items-center'>
+          <Link to='/forgot-password' className='text-lg font-semibold cursor-pointer hover:text-gray-300'>Forgot Password</Link>
+          <div className="signInBar ">
+            <p className="signInText hover:text-gray-300 pr-1 ">
               Sign In
             </p>
-            <button className="signInButton"> <ArrowRightIcon fill='#ffff' width='34px' height='34px' /></button>
+            <button className="signInButton "> <ArrowRightIcon fill='#ffff' width='30px' height='30px' /></button>
+          </div>
           </div>
         </form>
 
         <OAuth />
-        <Link to='/sign-up' className='registerLink'>Sign Up Instead</Link>
+        <Link to='/sign-up' className='registerLink mx-auto'>Sign Up Instead</Link>
       </div>
     </>
   )

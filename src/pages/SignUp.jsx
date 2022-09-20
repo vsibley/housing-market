@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import {toast} from 'react-toastify'
-import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth';
-import {setDoc, doc, serverTimestamp} from 'firebase/firestore';
-import {db} from  '../firebase.config';
+import { toast } from 'react-toastify'
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { setDoc, doc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../firebase.config';
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg';
 import visibilityIcon from '../assets/svg/visibilityIcon.svg';
 import OAuth from '../components/OAuth';
@@ -39,10 +39,10 @@ function SignUp() {
       const userCredentials = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredentials.user
 
-      updateProfile(auth.currentUser, {displayName: name})
+      updateProfile(auth.currentUser, { displayName: name })
 
-      const formDataCopy = {...formData}
-      delete formDataCopy.password 
+      const formDataCopy = { ...formData }
+      delete formDataCopy.password
       formDataCopy.timeStamp = serverTimestamp();
 
       await setDoc(doc(db, 'users', user.uid), formDataCopy);
@@ -56,12 +56,12 @@ function SignUp() {
 
   return (
     <>
-      <div className="header">
-        <header>
-          <p className="pageHeader">
-            Please enter info
-          </p>
-        </header>
+      <div className="header px-3 md:px-0 max-w-[1240px] mx-auto pt-[4rem] md:pt-[15rem] min-h-screen">        
+      <header>
+        <p className="pageHeader pb-4">
+          Please enter info
+        </p>
+      </header>
 
         <form onSubmit={onSubmit}>
           <input type="text" className="nameInput" placeholder='Name' id='name' value={name} onChange={onChange} />
@@ -72,12 +72,15 @@ function SignUp() {
 
             <img src={visibilityIcon} alt="show password" className="showPassword" onClick={() => setShowPassword((prevState) => !prevState)} />
           </div>
-          <Link to='/forgot-password' className='forgotPasswordLink'>Forgot Password</Link>
+          <div className='flex justify-between items-center'>
+          
+            <Link to='/forgot-password' className='text-lg font-semibold cursor-pointer hover:text-gray-300'>Forgot Password</Link>
           <div className="signUpBar">
-            <p className="signUpText">
+              <p className="signUpTex text-lg font-semibold cursor-pointer hover:text-gray-300">
               Sign Up
             </p>
             <button className="signUpButton"> <ArrowRightIcon fill='#ffff' width='34px' height='34px' /></button>
+          </div>
           </div>
         </form>
 

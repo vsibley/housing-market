@@ -5,8 +5,7 @@ import { db } from '../firebase.config';
 import { updateDoc, doc, collection, getDocs, query, orderBy, deleteDoc, where } from 'firebase/firestore';
 import {toast} from 'react-toastify';
 import ListingItem from '../components/ListingItem';
-import arrowRight from '../assets/svg/keyboardArrowRightIcon.svg';
-import homeIcon from '../assets/svg/homeIcon.svg';
+import { GoHome } from 'react-icons/go'
 import { async } from '@firebase/util';
 
 
@@ -104,41 +103,47 @@ function Profile() {
   const onEdit = (listingId) => navigate(`/edit-listing/${listingId}`)
  
 
-return <div>
-  <header className="profileHeader">
-    <p className="pageHeader">My Profile</p>
-    <button type='button' onClick={onLogout} className="logOut">
+  return <div className='pt-[3rem] max-w-[1240px] px-2 md:px-5 mx-auto min-h-screen '>
+  <main>
+    <div className='flex justify-between '>
+
+    <p className="text-3xl md:text-4xl font-bold pb-5">My Profile</p>
+    <button type='button' onClick={onLogout} className="btn-sm btn btn-outline text-black md:btn-md">
       Logout
     </button>
-  </header>
-  <main>
-    <div className="profileDetailsHeader">
+    </div>
+    <div className="profileDetailsHeader pb-4">
       <p className="profileDetailsText">Personal Details <br/> Only user name can be updated.</p>
       
-      <p className='changePersonalDetails' onClick={() => {
-        changeDetails && onSubmit()
-        setChangeDetails((prevState) => !prevState)
-      }}>
-        {changeDetails ? 'done' : 'change'}
-      </p>
+      
     </div>
-    <div className="profileCard">
+    <div className="profileCard max-w-5xl mx-auto">
       <form>
-        <input type="text" id='name' className={!changeDetails ? 'profileName' : 'profileNameActive'} disabled={!changeDetails} value={name} onChange={onChange} />
+          <p className='font-extrabold'>
+        Name: </p><input type="text" id='name' className={!changeDetails ? 'profileName' : 'profileNameActive'} disabled={!changeDetails} value={name} onChange={onChange} />
         
-        <input type="text" id='email' className='profileEmail' disabled={!changeDetails || changeDetails} value={email}  />
-
+       <p className='font-extrabold'> Email: </p> <input type="text" id='email' className='profileEmail' disabled={!changeDetails || changeDetails} value={email}  />
+          
       </form>
     </div>
-    <Link to='/create-listing' className='createListing'>
-      <img src={homeIcon} alt="home" />
-      <p>Sell or rent your home </p>
-      <img src={arrowRight} alt="arrowRight" />
+    <div className='grid gap-4 px-4 pt-6 md:grid-cols-2 '>
+
+        <Link to='/create-listing' className='btn btn-outline text-black'>
+      <GoHome/>
+          <p className='pl-2'>Sell/Rent your home </p>
+      
     </Link>
+        <p className='btn btn-outline text-black' onClick={() => {
+      changeDetails && onSubmit()
+      setChangeDetails((prevState) => !prevState)
+    }}>
+      {changeDetails ? 'done' : 'edit'}
+    </p>
+      </div>
 
     {!loading && listings?.length > 0 && (
       <>
-        <p className='listingText'>Your Listings</p>
+        <p className='pt-7 pb-4 md:py-7 text-xl font-bold'>Your Listings</p>
         <ul className='listingsList'>
           {listings.map((listing) => (
             <ListingItem

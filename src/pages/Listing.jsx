@@ -47,28 +47,8 @@ function Listing() {
     }
 
     return (
-        <main>
-            {/* <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y]}
-                slidesPerView={1}
-                pagination={{ clickable: true }}
-                navigation
-                style={{ height: '300px' }}
-            >
-                {listing.imgUrls.map((url, index) => {
-                    return (
-                        <SwiperSlide key={index}>
-                            <div
-                                className='swiperSlideDiv'
-                                style={{
-                                    background: `url(${listing.imgUrls[index]}) center no-repeat`,
-                                    backgroundSize: 'cover',
-                                }}
-                            ></div>
-                        </SwiperSlide>
-                    );
-                })}
-            </Swiper> */}
+        <main className='max-w-[1240px] mx-auto pt-5'>
+           
 
             <Swiper modules={[Virtual]} spaceBetween={50} slidesPerView={1} virtual pagination={{ clickable: true }} navigation = {true} >
                 {listing.imgUrls.map((slideContent, index) => (
@@ -80,9 +60,9 @@ function Listing() {
 
 
 
-
+            <div className='pl-[15rem] md:pl-[34rem] lg:pl-[55rem]'>
             <div
-                className='shareIconDiv'
+                className='shareIconDiv mt-[5rem] '
                 onClick={() => {
                     navigator.clipboard.writeText(window.location.href)
                     setShareLinkCopied(true)
@@ -92,6 +72,7 @@ function Listing() {
                 }}
             >
                 <img src={shareIcon} alt='' />
+            </div>
             </div>
 
             {shareLinkCopied && <p className='linkCopied'>Link Copied!</p>}
@@ -117,7 +98,7 @@ function Listing() {
                     </p>
                 )}
 
-                <ul className='listingDetailsList'>
+                <ul className='listingDetailsList text-lg'>
                     <li>
                         {listing.bedrooms > 1
                             ? `${listing.bedrooms} Bedrooms`
@@ -131,6 +112,16 @@ function Listing() {
                     <li>{listing.parking && 'Parking Spot'}</li>
                     <li>{listing.furnished && 'Furnished'}</li>
                 </ul>
+                <div className='pt-4'>
+                {auth.currentUser?.uid !== listing.userRef && (
+                    <Link
+                        to={`/contact/${listing.userRef}?listingName=${listing.name}`}
+                        className='btn btn-outline btn-success flex mx-auto'
+                    >
+                        Contact Landlord
+                    </Link>
+                )}
+                </div>
 
                 <p className='listingLocationTitle'>Location</p>
 
@@ -153,15 +144,11 @@ function Listing() {
                         </Marker>
                     </MapContainer>
                 </div>
+                
+                <br />
+                <br />
 
-                {auth.currentUser?.uid !== listing.userRef && (
-                    <Link
-                        to={`/contact/${listing.userRef}?listingName=${listing.name}`}
-                        className='primaryButton'
-                    >
-                        Contact Landlord
-                    </Link>
-                )}
+              
             </div>
         </main>
     )

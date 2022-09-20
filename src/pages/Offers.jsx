@@ -95,7 +95,7 @@ function Offers() {
   }
 
   return (
-    <div className='category'>
+    <div className='pt-[3rem] min-h-screen max-w-[1240px] px-2 md:px-5 mx-auto'>
       <header>
         <p className='pageHeader'>Offers</p>
       </header>
@@ -117,9 +117,8 @@ function Offers() {
           </main>
 
           <br />
-          <br />
           {lastFetchedListing && (
-            <p className='loadMore' onClick={onFetchMoreListings}>
+            <p className='loadMore btn btn-outline flex mb-3' onClick={onFetchMoreListings}>
               Load More
             </p>
           )}

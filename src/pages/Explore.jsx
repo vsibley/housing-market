@@ -6,16 +6,16 @@ import Slider from '../components/Slider'
 
 function Explore() {
   return (
-    <div className='explore'>
+    <div className='pt-[3rem]  px-3 pb-[8rem] md:px-0 max-w-[1240px] mx-auto'>
       <header>
-        <p className='pageHeader'> Explore available homes </p>
+        <p className='pageHeader'> Explore available properties </p>
       </header>
 
       <main>
         <Slider />
 
 
-        <p className="exploreCategoryHeading">Categories</p>
+        <p className="exploreCategoryHeading text-2xl pb-5">Categories</p>
         <div className="exploreCategories">
           <Link to='/category/rent'>
             <img src={rentCategoryImage} alt="Rent categories image" className='exploreCategoryImg' />

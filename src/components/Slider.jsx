@@ -53,7 +53,7 @@ function Slider() {
   return (
     listings && (
       <>
-        <p className='exploreHeading'>Recommended</p>
+        <p className='exploreHeading font-normal text-xl py-3'>Recently added properties</p>
 
         <Swiper
           slidesPerView={1}

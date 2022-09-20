@@ -32,7 +32,7 @@ function Contact() {
 
 
     return (
-        <div className='pageContainer'>
+        <div className='pt-[5rem] max-w-[1240px] px-2 md:px-5 mx-auto min-h-screen'>
             <header className='pageHeader'>
                 Contact Landlord
             </header>

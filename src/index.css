@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
 * {
   box-sizing: border-box;
@@ -5,6 +9,7 @@
 
 html::-webkit-scrollbar {
   display: none;
+  
 }
 
 body {
@@ -12,18 +17,10 @@ body {
   background-color: #f2f4f8;
   margin: 0;
   box-sizing: border-box;
+  color: #262626;
 }
 
-a {
-  text-decoration: none;
-  display: block;
-  color: #000000;
-}
 
-button {
-  outline: none;
-  border: none;
-}
 
 .input,
 .passwordInput,
@@ -140,22 +137,17 @@ button {
 }
 
 .navbar {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 85px;
+
   background-color: #ffffff;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
 }
 
 .navbarNav {
   width: 100%;
   margin-top: 0.75rem;
-  overflow-y: hidden;
+  overflow-y: hidden;  
+  z-index: 1000;
+
 }
 
 .navbarListItems {
@@ -220,7 +212,7 @@ button {
 
 .signInBar,
 .signUpBar {
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -242,7 +234,7 @@ button {
 
 .signInText,
 .signUpText {
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   font-weight: 700;
 }
 
@@ -251,15 +243,15 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   background-color: #00cc66;
   border-radius: 50%;
 }
 @media (min-width: 1024px) {
   .signInButton,
   .signUpButton {
-    margin-left: 3rem;
+    margin-left: .5rem;
   }
 }
 
@@ -356,12 +348,12 @@ button {
 .swiperSlidePrice {
   color: #000000;
   position: absolute;
-  top: 143px;
+  top: 153px;
   left: 11px;
   font-weight: 600;
   max-width: 90%;
   background-color: #ffffff;
-  padding: 0.25rem 0.5rem;
+  padding: 0.75rem 0.5rem;
   border-radius: 1rem;
 }
 @media (min-width: 1024px) {
@@ -406,6 +398,8 @@ button {
   align-items: center;
   margin-bottom: 1rem;
   position: relative;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .categoryListingLink {
@@ -456,6 +450,9 @@ button {
   display: flex;
   align-items: center;
 }
+.categoryListingBtn {
+   font-size: .75rem;
+}
 
 .categoryListingInfoDiv {
   display: flex;
@@ -474,12 +471,10 @@ button {
   margin: 0 auto;
   text-align: center;
   padding: 0.25rem 0.5rem;
-  background-color: #000000;
-  color: #ffffff;
   font-weight: 600;
   border-radius: 1rem;
-  opacity: 0.7;
-  margin-top: 2rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
 }
 
 .listingDetails {
@@ -490,7 +485,7 @@ button {
   cursor: pointer;
   position: fixed;
   top: 3%;
-  right: 5%;
+  /* right: 5%; */
   z-index: 2;
   background-color: #ffffff;
   border-radius: 50%;
@@ -651,7 +646,6 @@ button {
   border-radius: 1rem;
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.2);
-  max-width: 500px;
 }
 
 .profileDetails {
@@ -667,7 +661,6 @@ button {
 .profileNameActive {
   all: unset;
   margin: 0.3rem 0;
-  font-weight: 600;
   width: 100%;
 }
 .profileNameActive {

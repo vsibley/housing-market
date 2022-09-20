@@ -94,7 +94,7 @@ function Category() {
   }
 
   return (
-    <div className='category'>
+    <div className='px-4 md:px-0 max-w-[1240px] mx-auto'>
       <header>
         <p className='pageHeader'>
           {params.categoryName === 'rent'
@@ -119,13 +119,13 @@ function Category() {
             </ul>
           </main>
 
-          <br />
-          <br />
+          <div className='flex pb-5'>
           {lastFetchedListing && (
-            <p className='loadMore' onClick={onFetchMoreListings}>
+            <p className='loadMore btn btn-outline' onClick={onFetchMoreListings}>
               Load More
             </p>
           )}
+            </div>
         </>
       ) : (
         <p>No listings for {params.categoryName}</p>
