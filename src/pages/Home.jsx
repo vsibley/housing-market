@@ -1,8 +1,11 @@
-import React from 'react'
+import { useNavigate} from 'react-router-dom'
 import Slider from '../components/Slider'
 import { RiHomeHeartLine } from 'react-icons/ri'
 
 function Home() {
+
+    const navigation = useNavigate()
+
   return (
       <div className='pb-[8rem] md:px-0 max-w-[1240px] mx-auto min-h-screen'>
       <Slider />
@@ -18,7 +21,7 @@ function Home() {
                                   The site dedicated to making the selling &amp; renting process easy. We are commited to having the easiest and most transparent prices, hosts and sellers. Here at Casa, your home is our home. That means we've always got <span className='font-bold italic'>our</span> best interest at heart.
                           </p>
                           <div className="w-full md:w-1/3">
-                                  <button type="button" className="py-2 px-4  btn bg-[#5af] hover:bg-[#c5e5fb] text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                                  <button type="button" className="py-2 px-4  btn bg-[#5af] hover:bg-[#c5e5fb] text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg" onClick={() => navigation('/sign-up')}>
                                   Sign Up
                               </button>
                           </div>
