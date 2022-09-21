@@ -25,7 +25,7 @@ function ListingItem({ listing, id, onDelete, onEdit }) {
                 </Link>
 
 
-                <div className="categoryListingDetails grid">
+                <div className="categoryListingDetails grid md:pl-3">
                     <p className="text-xs cursor-pointer" onClick={() => navigate(`/category/${listing.type}/${id}`)}>
                         {listing.location}
                     </p>

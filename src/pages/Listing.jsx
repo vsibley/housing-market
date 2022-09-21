@@ -89,7 +89,7 @@ function Listing() {
                                 .toString()
                                 .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                     </p>
-                    <p className='listingLocation'>{listing.location}</p>
+                    <p className='listingLocation pb-2'>{listing.location}</p>
                     <p className='listingType'>
                         For {listing.type === 'rent' ? 'Rent' : 'Sale'}
                     </p>

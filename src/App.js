@@ -14,6 +14,7 @@ import CreateListing from "../src/pages/CreateListing";
 import EditListing from "../src/pages/EditListing";
 import Listing from "./pages/Listing";
 import Contact from "./pages/Contact";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Explore />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/explore" element={<Explore />} />
           <Route path="/offers" element={<Offers />} />
           <Route path="/category/:categoryName" element={<Category />} />
           <Route path="/profile" element={<PrivateRoute />}>

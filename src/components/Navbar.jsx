@@ -4,6 +4,7 @@ import { ReactComponent as OfferIcon } from '../assets/svg/localOfferIcon.svg'
 import { ReactComponent as ExploreIcon } from '../assets/svg/exploreIcon.svg'
 import { ReactComponent as PersonOutlineIcon } from '../assets/svg/personOutlineIcon.svg'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+import { RiHomeHeartLine } from 'react-icons/ri'
 function Navbar() {
     const navigate = useNavigate();
     const location = useLocation();
@@ -24,21 +25,25 @@ function Navbar() {
         <div className='navbar'>
             <div className='flex justify-between items-center w-full h-full max-w-[1240px] mx-auto'>
                 <a href='/'>
-                    HOME
-                    {/* <Image src='/assets/logo/logo.png' alt='vs logo' width='85' height='85'/> */}
+                    <RiHomeHeartLine className='text-3xl md:text-5xl text text-[#5af]'/>
                 </a>
                 <div>
-                    <ul className='hidden md:flex space-x-6 '>
+                    <ul className='hidden md:flex space-x-5 '>
                         <li className="" onClick={() => navigate('/')}>
                            
-                            <p className={pathMatchRoute('/') ? 'text-lg font-bold text-gray-400' : 'text-lg '} > Explore </p>
+                            <p className={pathMatchRoute('/') ? 'text-lg font-bold text-gray-400' : 'text-lg '} > Home </p>
                         </li>
+                        <li className="" onClick={() => navigate('/explore')}>
+                           
+                            <p className={pathMatchRoute('/explore') ? 'text-lg font-bold text-gray-400' : 'text-lg '} > Explore </p>
+                        </li>
+                        
                         <li className="navbarListItem" onClick={() => navigate('/offers')}>
                           
                             <p className={pathMatchRoute('/offers') ? 'text-lg font-bold text-gray-400' : 'text-lg '}> Offers </p>
                         </li>
+
                         <li className="navbarListItem" onClick={() => navigate('/profile')}>
-                            
                             <p className={pathMatchRoute('/profile') ? 'text-lg font-bold text-gray-400' : 'text-lg '}>Profile</p>
                         </li>
                      
@@ -71,10 +76,17 @@ function Navbar() {
                     </div>
                     <div className='py-3 flex flex-col'>
                         <ul className='uppercase'>
+
                             <li className="" onClick={() => navigate('/')}>
 
-                                <p className={pathMatchRoute('/') ? 'text-lg font-bold text-gray-500 pb-3' : 'text-lg pb-3'} onClick={() => setNav(false)}> Explore </p>
+                                <p className={pathMatchRoute('/') ? 'text-lg font-bold text-gray-500 pb-3' : 'text-lg pb-3'} onClick={() => setNav(false)}> Home </p>
                             </li>
+
+                            <li className="" onClick={() => navigate('/explore')}>
+
+                                <p className={pathMatchRoute('/explore') ? 'text-lg font-bold text-gray-500 pb-3' : 'text-lg pb-3'} onClick={() => setNav(false)}> Explore </p>
+                            </li>
+
                             <li className="" onClick={() => navigate('/offers')}>
 
                                 <p className={pathMatchRoute('/offers') ? 'text-lg font-bold text-gray-500 pb-3' : 'text-lg pb-3 '} onClick={() => setNav(false)}> Offers </p>

@@ -1,7 +1,7 @@
 
 
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper'
@@ -9,13 +9,20 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-
 import 'swiper/css/a11y'; import Spinner from './Spinner'
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay])
 
 function Slider() {
   const [loading, setLoading] = useState(true)
   const [listings, setListings] = useState(null)
+  const location = useLocation();
+
+
+  const pathMatchRoute = (route) => {
+    if (route === location.pathname) {
+      return true
+    }
+  }
 
   const navigate = useNavigate()
 
@@ -32,7 +39,7 @@ function Slider() {
           id: doc.id,
           data: doc.data(),
         })
-      })           
+      })
 
       setListings(listings)
       setLoading(false)
@@ -53,8 +60,8 @@ function Slider() {
   return (
     listings && (
       <>
-        <p className='exploreHeading font-normal text-xl py-3'>Recently added properties</p>
 
+        <p className={pathMatchRoute('/') ? 'hidden' : 'exploreHeading font-normal text-xl py-3'}> Recently added properties</p>
         <Swiper
           slidesPerView={1}
           pagination={{ clickable: true }}

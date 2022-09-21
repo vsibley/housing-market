@@ -56,7 +56,7 @@ body {
 
 .primaryButton {
   cursor: pointer;
-  background: #00cc66;
+  background: #5AF;
   border-radius: 1rem;
   padding: 0.85rem 2rem;
   color: #ffffff;
@@ -118,7 +118,7 @@ body {
   width: 64px;
   height: 64px;
   border: 8px solid;
-  border-color: #00cc66 transparent #00cc66 transparent;
+  border-color: #5AF transparent #5AF transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
@@ -205,7 +205,7 @@ body {
 
 .forgotPasswordLink {
   cursor: pointer;
-  color: #00cc66;
+  color: #5AF;
   font-weight: 600;
   text-align: right;
 }
@@ -245,7 +245,7 @@ body {
   align-items: center;
   width: 2rem;
   height: 2rem;
-  background-color: #00cc66;
+  background-color: #5AF;
   border-radius: 50%;
 }
 @media (min-width: 1024px) {
@@ -282,7 +282,7 @@ body {
 
 .registerLink {
   margin-top: 4rem;
-  color: #00cc66;
+  color: #5AF;
   font-weight: 600;
   text-align: center;
   margin-bottom: 3rem;
@@ -445,7 +445,7 @@ body {
   margin-top: 0.5rem;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #00cc66;
+  color: #5AF;
   margin-bottom: 0;
   display: flex;
   align-items: center;
@@ -519,7 +519,7 @@ body {
 
 .listingType {
   padding: 0.25rem 0.5rem;
-  background-color: #00cc66;
+  background-color: #5af;
   color: #ffffff;
   border-radius: 2rem;
   display: inline;
@@ -530,12 +530,14 @@ body {
 
 .listingDetailsList {
   padding: 0;
+  padding-top: 1rem;
   list-style-type: none;
 }
 .listingDetailsList li {
   margin: 0.3rem 0;
   font-weight: 500;
   opacity: 0.8;
+  padding-top: .25rem;
 }
 
 .listingLocationTitle {
@@ -620,7 +622,7 @@ body {
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
-  background-color: #00cc66;
+  background-color: #5AF;
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
 }
@@ -638,7 +640,7 @@ body {
 .changePersonalDetails {
   cursor: pointer;
   font-weight: 600;
-  color: #00cc66;
+  color: #5AF;
 }
 
 .profileCard {
@@ -731,7 +733,7 @@ body {
   align-items: center;
 }
 .formButtonActive {
-  background-color: #00cc66;
+  background-color: #5AF;
   color: #ffffff;
 }
 
@@ -786,7 +788,7 @@ body {
   width: 100%;
 }
 .formInputFile::-webkit-file-upload-button {
-  background-color: #00cc66;
+  background-color: #5AF;
   border: none;
   color: #ffffff;
   font-weight: 600;
