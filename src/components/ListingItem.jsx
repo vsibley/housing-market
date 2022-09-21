@@ -25,51 +25,54 @@ function ListingItem({ listing, id, onDelete, onEdit }) {
                 </Link>
 
 
-                    <div className="categoryListingDetails grid">
+                <div className="categoryListingDetails grid">
                     <p className="text-xs cursor-pointer" onClick={() => navigate(`/category/${listing.type}/${id}`)}>
-                            {listing.location}
-                        </p>
+                        {listing.location}
+                    </p>
                     <p className="font-bold text-sm md:text-lg cursor" onClick={() => navigate(`/category/${listing.type}/${id}`)}>
-                            {listing.name}
-                        </p>
+                        {listing.name}
+                    </p>
 
-                        <p className="categoryListingPrice">
-                            ${listing.offer ? listing.discountedPrice
+                    <p className="categoryListingPrice">
+                        ${listing.offer ? listing.discountedPrice
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                            : listing.regularPrice
                                 .toString()
-                                .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-                                : listing.regularPrice
-                                    .toString()
-                                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-                            {listing.type === 'rent' && '/month'}
-                        </p>
-                        <div className="categoryListingInfoDiv py-2">
+                                .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                        {listing.type === 'rent' && '/month'}
+                    </p>
+                    <div className="categoryListingInfoDiv py-2">
                         <FaBed />
-                            <p className="categoryListingInfoText">
-                                {listing.bedrooms > 1 ? `${listing.bedrooms} Bedrooms` : '1 Bedroom'}
-                            </p>
+                        <p className="categoryListingInfoText">
+                            {listing.bedrooms > 1 ? `${listing.bedrooms} Bedrooms` : '1 Bedroom'}
+                        </p>
                         <FaBath />
-                            <p className='categoryListingInfoText'>
-                                {listing.bathrooms > 1 ? `${listing.bathrooms} Baths` : '1 Bath'}
-                            </p>
-
-                        </div>
-
-                        <span className='categoryListingBtn items-center pt-2 md:hidden'>
-                        <p className='inline-flex pr- cursor-pointer pr-[5.25rem]' onClick={() => onDelete(listing.id, listing.name)}> 
-                                {onDelete && (
-                                    <DeleteIcon fill='rgb(231, 76, 60)' />
-                                )} Delete
-                            </p>
-
-                        <p className='inline-flex cursor-pointer' onClick={() => onEdit(id)}>
-                                {onEdit &&
-                                    <EditIcon />}
-                                    Update
-                            </p>
-                        </span>
-
+                        <p className='categoryListingInfoText'>
+                            {listing.bathrooms > 1 ? `${listing.bathrooms} Baths` : '1 Bath'}
+                        </p>
 
                     </div>
+
+                    <div className='md:hidden inline-flex justify-between'>
+
+                        {onDelete && (
+                            <div className='inline-flex'>
+                                <DeleteIcon className='' fill='rgb(231, 76, 60)' onClick={() => onDelete(listing.id, listing.name)} />
+                                <p className='text-sm px-1'>Delete</p>
+                            </div>
+                        )}
+
+                        {onEdit && (
+                            <div className='inline-flex'>
+                                <EditIcon className='' onClick={() => onEdit(id)} />
+                                <p className='text-sm px-1'>Edit</p>
+                            </div>
+                        )}
+
+                    </div>
+
+                </div>
                 <div className='hidden md:flex'>
 
                     {onDelete && (

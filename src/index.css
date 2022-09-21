@@ -483,9 +483,9 @@ body {
 
 .shareIconDiv {
   cursor: pointer;
-  position: fixed;
+  position: absolute;
   top: 3%;
-  /* right: 5%; */
+  /* right: 15%; */
   z-index: 2;
   background-color: #ffffff;
   border-radius: 50%;

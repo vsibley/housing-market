@@ -55,13 +55,13 @@ function Navbar() {
                 <div
                     className={
                         nav
-                            ? 'navbarNavmd:hidden fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen p-10 ease-in duration-500'
+                            ? 'navbarNavmd:hidden fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen p-7 ease-in duration-500'
                             : 'fixed left-[-100%] top-0 p-10 ease-in duration-500'
                     }
                 >
                     <div>
                         <div className='flex w-full justify-end pb-2'>
-                            <div className='rounded-full shadow-lg p-3 shadow-gray-500 cursor-pointer' onClick={changeNav}>
+                            <div className='rounded-full  shadow-gray-500 cursor-pointer' onClick={changeNav}>
                                 <AiOutlineClose size={25} />
                             </div>
                         </div>
@@ -69,19 +69,19 @@ function Navbar() {
 
                         </div>
                     </div>
-                    <div className='py-2 flex flex-col'>
+                    <div className='py-3 flex flex-col'>
                         <ul className='uppercase'>
                             <li className="" onClick={() => navigate('/')}>
 
-                                <p className={pathMatchRoute('/') ? 'text-lg font-bold text-gray-500' : 'text-lg '} onClick={() => setNav(false)}> Explore </p>
+                                <p className={pathMatchRoute('/') ? 'text-lg font-bold text-gray-500 pb-3' : 'text-lg pb-3'} onClick={() => setNav(false)}> Explore </p>
                             </li>
                             <li className="" onClick={() => navigate('/offers')}>
 
-                                <p className={pathMatchRoute('/offers') ? 'text-lg font-bold text-gray-500' : 'text-lg '} onClick={() => setNav(false)}> Offers </p>
+                                <p className={pathMatchRoute('/offers') ? 'text-lg font-bold text-gray-500 pb-3' : 'text-lg pb-3 '} onClick={() => setNav(false)}> Offers </p>
                             </li>
                             <li className="" onClick={() => navigate('/profile')}>
 
-                                <p className={pathMatchRoute('/profile') ? 'text-lg font-bold text-gray-500' : 'text-lg '} onClick={() => setNav(false)}>Profile</p>
+                                <p className={pathMatchRoute('/profile') ? 'text-lg font-bold text-gray-500 pb-3' : 'text-lg pb-3'} onClick={() => setNav(false)}>Profile</p>
                             </li>
                             
                         </ul>
