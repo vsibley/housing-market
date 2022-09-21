@@ -35,10 +35,10 @@ function Home() {
                               </div>
                               <div className="px-4">
                                   <h3 className="my-4 text-xl font-semibold ">
-                                      Responsive Elements
+                                      Quick &amp; Easy 
                                   </h3>
                                   <p className="text-gray-500 leading-loose">
-                                      All elements are responsive and provide the best display in all screen size. It&#x27;s magic !
+                                     Sign up for and account and create your listing. <span className='font-black'>You</span> design the terms and decide what'll work best for you. 
                                   </p>
                               </div>
                           </li>
@@ -51,10 +51,10 @@ function Home() {
                               </div>
                               <div className="px-4">
                                   <h3 className="my-4 text-xl font-semibold ">
-                                      Flexible Team
+                                      Flexible Terms 
                                   </h3>
                                   <p className="text-gray-500 leading-loose">
-                                      Flexibility is the key. All team is available 24/24 and joinable every day on our hotline.
+                                      Flexibility is the key. All contracts are designed specifically by the seller/renter and the customer. No third party mediator and but all the safety perks.
                                   </p>
                               </div>
                           </li>
