@@ -247,7 +247,7 @@ function EditListing() {
   }
 
   return (
-    <div className='profile'>
+    <div className='profile pt-[1rem]  pb-[8rem] md:px-0 max-w-[1240px] mx-auto'>
       <header>
         <p className='pageHeader'>Edit Listing</p>
       </header>
@@ -276,7 +276,7 @@ function EditListing() {
             </button>
           </div>
 
-          <label className='formLabel'>Name</label>
+          <label className='formLabel'>Name Of listing</label>
           <input
             className='formInputName'
             type='text'
@@ -406,7 +406,26 @@ function EditListing() {
             </div>
           )}
 
-          <label className='formLabel'>Offer</label>
+         
+
+          <label className='formLabel'>Regular Price</label>
+          <div className='formPriceDiv'>
+            <input
+              className='formInputSmall'
+              type='number'
+              id='regularPrice'
+              value={regularPrice}
+              onChange={onMutate}
+              min='50'
+              max='750000000'
+              required
+            />
+            {type === 'rent' && <p className='formPriceText'>$ / Month</p>}
+          </div>
+
+
+
+          <label className='formLabel'>Did you want to add a discounted Offer?</label>
           <div className='formButtons'>
             <button
               className={offer ? 'formButtonActive' : 'formButton'}
@@ -430,21 +449,6 @@ function EditListing() {
             </button>
           </div>
 
-          <label className='formLabel'>Regular Price</label>
-          <div className='formPriceDiv'>
-            <input
-              className='formInputSmall'
-              type='number'
-              id='regularPrice'
-              value={regularPrice}
-              onChange={onMutate}
-              min='50'
-              max='750000000'
-              required
-            />
-            {type === 'rent' && <p className='formPriceText'>$ / Month</p>}
-          </div>
-
           {offer && (
             <>
               <label className='formLabel'>Discounted Price</label>
@@ -460,6 +464,7 @@ function EditListing() {
               />
             </>
           )}
+
 
           <label className='formLabel'>Images</label>
           <p className='imagesInfo'>

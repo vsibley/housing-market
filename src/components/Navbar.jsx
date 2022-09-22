@@ -24,7 +24,7 @@ function Navbar() {
     return (
         <div className='navbar'>
             <div className='flex justify-between items-center w-full h-full max-w-[1240px] mx-auto'>
-                <a href='/' alt='home link'>
+                <a href='/' alt='home link' aria-label="Redirect back to the home page">
                     <RiHomeHeartLine className='text-3xl md:text-5xl text text-[#5af]'/>
                 </a>
                 <div>
@@ -48,7 +48,7 @@ function Navbar() {
                         </li>
                      
                     </ul>
-                    <div className='md:hidden' onClick={changeNav}>
+                    <div className='md:hidden cursor-pointer' onClick={changeNav}>
                         <AiOutlineMenu size={25} />
                     </div>
                 </div>
@@ -66,7 +66,7 @@ function Navbar() {
                 >
                     <div>
                         <div className='flex w-full justify-end pb-2'>
-                            <div className='rounded-full  shadow-gray-500 cursor-pointer' onClick={changeNav}>
+                            <div className='rounded-full cursor-pointer' onClick={changeNav}>
                                 <AiOutlineClose size={25} />
                             </div>
                         </div>

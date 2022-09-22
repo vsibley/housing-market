@@ -9,7 +9,7 @@ function Home() {
   return (
       <div className='pb-[8rem] md:px-0 max-w-[1240px] mx-auto min-h-screen'>
       <Slider />
-      <section className='items-center flex pt-5 lg:pt-[6rem]'>
+      <section className='items-center flex pt-5 lg:pt-[6rem] justify-center'>
           <div className="container p-4 lg:p-8">
               <div className="flex flex-wrap ">
                   <div className="w-full lg:w-1/2 px-8">
@@ -21,7 +21,7 @@ function Home() {
                                   The site dedicated to making the selling &amp; renting process easy. We are commited to having the easiest and most transparent prices, hosts and sellers. Here at Casa, your home is our home. That means we've always got <span className='font-bold italic'>our</span> best interest at heart.
                           </p>
                           <div className="w-full md:w-1/3">
-                                  <button type="button" className="py-2 px-4  btn bg-[#5af] hover:bg-[#c5e5fb] text-black w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg" onClick={() => navigation('/sign-up')}>
+                                  <button type="button" className="py-2 px-4  btn btn-wide bg-[#5af] hover:bg-[#c5e5fb] text-black transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg" onClick={() => navigation('/sign-up')}>
                                   Sign Up
                               </button>
                           </div>

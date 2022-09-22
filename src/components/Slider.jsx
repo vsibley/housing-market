@@ -61,7 +61,7 @@ function Slider() {
     listings && (
       <>
 
-        <p className={pathMatchRoute('/') ? 'hidden' : 'exploreHeading font-normal text-xl py-3'}> Recently added properties</p>
+        <p className={pathMatchRoute('/') ? 'hidden' : 'exploreHeading font-normal text-xl py-3 px-3'}> Recently added properties</p>
 
         {pathMatchRoute('/') ? (
           <Swiper

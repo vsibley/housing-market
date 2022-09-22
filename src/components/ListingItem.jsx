@@ -29,7 +29,7 @@ function ListingItem({ listing, id, onDelete, onEdit }) {
                     <p className="text-xs cursor-pointer" onClick={() => navigate(`/category/${listing.type}/${id}`)}>
                         {listing.location}
                     </p>
-                    <p className="font-bold text-sm md:text-lg cursor" onClick={() => navigate(`/category/${listing.type}/${id}`)}>
+                    <p className="font-bold text-sm md:text-lg cursor-pointer" onClick={() => navigate(`/category/${listing.type}/${id}`)}>
                         {listing.name}
                     </p>
 
@@ -54,19 +54,19 @@ function ListingItem({ listing, id, onDelete, onEdit }) {
 
                     </div>
 
-                    <div className='md:hidden inline-flex justify-between'>
+                    <div className='md:hidden inline-flex justify-between '>
 
                         {onDelete && (
-                            <div className='inline-flex'>
+                            <div className='inline-flex cursor-pointer'>
                                 <DeleteIcon className='' fill='rgb(231, 76, 60)' onClick={() => onDelete(listing.id, listing.name)} />
-                                <p className='text-sm px-1'>Delete</p>
+                                <p className='text-sm px-1' onClick={() => onDelete(listing.id, listing.name)}>Delete</p>
                             </div>
                         )}
 
                         {onEdit && (
-                            <div className='inline-flex'>
+                            <div className='inline-flex cursor-pointer'>
                                 <EditIcon className='' onClick={() => onEdit(id)} />
-                                <p className='text-sm px-1'>Edit</p>
+                                <p className='text-sm px-1 onClick={() => onEdit(id)}'>Edit</p>
                             </div>
                         )}
 
