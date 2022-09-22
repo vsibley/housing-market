@@ -10,14 +10,14 @@ function Home() {
       <div className='pb-[8rem] md:px-0 max-w-[1240px] mx-auto min-h-screen'>
       <Slider />
       <section className='items-center flex pt-5 lg:pt-[6rem]'>
-          <div className="container  p-4 sm:p-6 lg:p-8">
-              <div className="flex flex-wrap -mx-8 ">
+          <div className="container p-4 lg:p-8">
+              <div className="flex flex-wrap ">
                   <div className="w-full lg:w-1/2 px-8">
                       <div className="mb-12 lg:mb-0 pb-12 lg:pb-0 border-b lg:border-b-0">
                           <h2 className="mb-4 text-2xl md:text-4xl font-bold font-heading ">
                                   Welcome to Casa < RiHomeHeartLine className='inline pl-2' />
                           </h2>
-                          <p className="mb-8 leading-loose">
+                          <p className="mb-8">
                                   The site dedicated to making the selling &amp; renting process easy. We are commited to having the easiest and most transparent prices, hosts and sellers. Here at Casa, your home is our home. That means we've always got <span className='font-bold italic'>our</span> best interest at heart.
                           </p>
                           <div className="w-full md:w-1/3">
@@ -27,7 +27,7 @@ function Home() {
                           </div>
                       </div>
                   </div>
-                  <div className="w-full lg:w-1/2 px-8">
+                      <div className="w-full lg:w-1/2 px-8 -mx-8 ">
                       <ul className="space-y-12">
 
                           <li className="flex -mx-4">
@@ -40,7 +40,7 @@ function Home() {
                                   <h3 className="my-4 text-xl font-semibold ">
                                       Quick &amp; Easy 
                                   </h3>
-                                  <p className="text-gray-500 leading-loose">
+                                  <p className="text-gray-800">
                                      Sign up for and account and create your listing. <span className='font-black'>You</span> design the terms and decide what'll work best for you. 
                                   </p>
                               </div>
@@ -56,7 +56,7 @@ function Home() {
                                   <h3 className="my-4 text-xl font-semibold ">
                                       Flexible Terms 
                                   </h3>
-                                  <p className="text-gray-500 leading-loose">
+                                  <p className="text-gray-800">
                                       Flexibility is the key. All contracts are designed specifically by the seller/renter and the customer. No third party mediator and but all the safety perks.
                                   </p>
                               </div>

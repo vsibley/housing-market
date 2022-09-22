@@ -193,7 +193,7 @@ function CreateListing() {
         return <Spinner />
     }
     return (
-        <div className='max-w-[1240px] mx-auto'>
+        <div className='max-w-[1240px] mx-auto min-h-screen px-5 pt-4 pb-10'>
             <header>
                 <p className='pageHeader'>Create a Listing</p>
             </header>
@@ -220,7 +220,7 @@ function CreateListing() {
                             Rent
                         </button>
                     </div>
-                    <label className='formLabel'>Name</label>
+                    <label className='formLabel'>Name Of Listing</label>
                     <input
                         className='formInputName'
                         type='text'
@@ -344,7 +344,23 @@ function CreateListing() {
                             </div>
                         </div>
                     )}
-                    <label className='formLabel'>Offer</label>
+                    
+                    <label className='formLabel'>Regular Price</label>
+                    <div className='formPriceDiv'>
+                        <input
+                            className='formInputSmall'
+                            type='number'
+                            id='regularPrice'
+                            value={regularPrice}
+                            onChange={onMutate}
+                            min='50'
+                            max='750000000'
+                            required
+                        />
+                        {type === 'rent' && <p className='formPriceText'>$ / Month</p>}
+                    </div>
+
+                    <label className='formLabel'>Would you like to add a discounted offer?</label>
                     <div className='formButtons'>
                         <button
                             className={offer ? 'formButtonActive' : 'formButton'}
@@ -367,20 +383,9 @@ function CreateListing() {
                             No
                         </button>
                     </div>
-                    <label className='formLabel'>Regular Price</label>
-                    <div className='formPriceDiv'>
-                        <input
-                            className='formInputSmall'
-                            type='number'
-                            id='regularPrice'
-                            value={regularPrice}
-                            onChange={onMutate}
-                            min='50'
-                            max='750000000'
-                            required
-                        />
-                        {type === 'rent' && <p className='formPriceText'>$ / Month</p>}
-                    </div>
+
+
+
                     {offer && (
                         <>
                             <label className='formLabel'>Discounted Price</label>

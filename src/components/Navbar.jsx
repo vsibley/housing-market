@@ -24,7 +24,7 @@ function Navbar() {
     return (
         <div className='navbar'>
             <div className='flex justify-between items-center w-full h-full max-w-[1240px] mx-auto'>
-                <a href='/'>
+                <a href='/' alt='home link'>
                     <RiHomeHeartLine className='text-3xl md:text-5xl text text-[#5af]'/>
                 </a>
                 <div>

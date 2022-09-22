@@ -95,7 +95,7 @@ function Offers() {
   }
 
   return (
-    <div className='pt-[3rem] min-h-screen max-w-[1240px] px-2 md:px-5 mx-auto'>
+    <div className='pt-[1.5rem] min-h-screen pb-10 max-w-[1240px] px-2 md:px-5 mx-auto'>
       <header>
         <p className='pageHeader'>Offers</p>
       </header>
