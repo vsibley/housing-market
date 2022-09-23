@@ -85,7 +85,6 @@ body {
 .pageContainer,
 .offers,
 .profile,
-.listingDetails,
 .category,
 .explore {
   margin: 1rem;
@@ -94,7 +93,6 @@ body {
   .pageContainer,
   .offers,
   .profile,
-  .listingDetails,
   .category,
   .explore {
     margin: 3rem;
@@ -479,9 +477,7 @@ body {
   margin-bottom: .5rem;
 }
 
-.listingDetails {
-  margin-bottom: 10rem;
-}
+
 
 .shareIconDiv {
   cursor: pointer;

@@ -47,8 +47,8 @@ function Listing() {
     }
 
     return (
-        <div className='max-w-[1240px] min-h-screen mx-auto mb-10'>
-            <main>
+        <div className='max-w-[1240px] mx-auto min-h-screen'>
+            <>
 
 
                 <Swiper modules={[Virtual]} spaceBetween={50} slidesPerView={1} virtual pagination={{ clickable: true }} navigation={true} >
@@ -57,7 +57,7 @@ function Listing() {
                             <img src={slideContent} alt="" className='sliderImg' />
                         </SwiperSlide>
                     ))}
-                </Swiper>
+                </Swiper> 
 
 
 
@@ -74,11 +74,11 @@ function Listing() {
                     >
                         <img src={shareIcon} alt='' />
                     </div>
-                </div>
+                </div> 
 
                 {shareLinkCopied && <p className='linkCopied'>Link Copied!</p>}
 
-                <div className='listingDetails'>
+                <div className='listingDetails px-3'>
                     <p className='listingName'>
                         {listing.name} - $
                         {listing.offer
@@ -123,10 +123,10 @@ function Listing() {
                             </Link>
                         )}
                     </div>
-                    <div className='min-h-screen'>
+                    <div>
                         <p className='listingLocationTitle'>Location</p>
 
-                        <div className='leafletContainer'>
+                        <div className='leafletContainer '>
                             <MapContainer
                                 style={{ height: '100%', width: '100%' }}
                                 center={[listing.geolocation.lat, listing.geolocation.lng]}
@@ -151,7 +151,7 @@ function Listing() {
                     </div>
 
                 </div>
-            </main>
+            </>
         </div>
     )
 }
