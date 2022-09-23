@@ -673,9 +673,7 @@ body {
 .profileEmailActive {
   font-weight: 500;
 }
-.profileEmailActive {
-  background-color: rgba(44, 44, 44, 0.1);
-}
+
 
 .profileAddressActive {
   background-color: rgba(44, 44, 44, 0.1);
@@ -699,9 +697,6 @@ body {
   font-weight: 600;
 }
 
-.lisitingsList {
-  padding: 0;
-}
 
 .formLabel {
   font-weight: 600;

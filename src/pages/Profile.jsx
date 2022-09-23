@@ -103,7 +103,7 @@ function Profile() {
   const onEdit = (listingId) => navigate(`/edit-listing/${listingId}`)
  
 
-  return <div className='pt-[3rem] max-w-[1240px] px-2 md:px-5 mx-auto min-h-screen '>
+  return <div className='pt-[3rem] max-w-[1240px] px-2 md:px-5 mx-auto min-h-screen pb-8'>
   <main>
     <div className='flex justify-between '>
 
@@ -144,7 +144,7 @@ function Profile() {
     {!loading && listings?.length > 0 && (
       <>
         <p className='pt-7 pb-4 md:py-7 text-xl font-bold'>Your Listings</p>
-        <ul className='listingsList'>
+        <ul>
           {listings.map((listing) => (
             <ListingItem
               key={listing.id}
