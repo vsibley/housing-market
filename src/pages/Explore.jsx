@@ -6,7 +6,7 @@ import Slider from '../components/Slider'
 
 function Explore() {
   return (
-    <div className='pt-[2rem]  pb-[8rem] md:px-0 max-w-[1240px] mx-auto'>
+    <div className='pt-[2rem]  pb-[8rem] md:px-0 max-w-[1240px] mx-auto min-h-screen'>
       <header>
         <p className='pageHeader px-3'> Explore available properties </p>
       </header>

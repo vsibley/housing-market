@@ -23,14 +23,14 @@ function ForgotPassword() {
 
 
   return (
-    <div className='pageContainer'>
-      <header>
-        <p className="pageHeader">Forgot Password?</p>
-      </header>
+    <div className='grid items-center pb-[8rem] px-3 lg:px-0 max-w-[1240px] mx-auto min-h-screen'>
       <main>
+      <header>
+        <p className="pageHeader pb-5">Forgot Password?</p>
+      </header>
         <form onSubmit={onSubmit}>
           <input type="email" placeholder='Email' id={email} value={email} className="emailInput" onChange={onChange} />
-          <Link className='forgotPasswordLink' to='/sign-in'>Sign In</Link>
+          <Link className='forgotPasswordLink pb-5' to='/sign-in'>Sign In</Link>
           <div className="signInBar">
             <div className="signInText">Send Reset Link</div>
             <button className="signInButton">
